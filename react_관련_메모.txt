@@ -25,3 +25,20 @@ var newPlayer = Object.assign({}, player, {score: 2});
 
 javascript false 로 판단하는 value  ---> false , null , undefined , "" , 0 , NaN
 
+
+var math = math || {}; // math 네임스페이스 
+
+(function() {
+  function sum(a, b) { return a + b; }
+  math.sum = sum; // 네이스페이스에 추가 
+})();
+
+
+
+https://polyfill.io/v3/polyfill.min.js?features=default%2Cconsole
+
+https://cdn.rawgit.com/inexorabletash/polyfill/v0.1.41/polyfill.min.js?features=default%2Cconsole
+
+https://polyfill.io/v3/polyfill.min.js?features=default%2CSet%2CJSON%2CPromise%2Cconsole
+
+http://localhost:8080/v3/polyfill.min.js?features=default%2CSet%2CJSON%2CPromise%2Cconsole
