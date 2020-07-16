@@ -3,7 +3,10 @@
 이것은 자식 컴포넌트들이 서로 또는 부모 컴포넌트와 동기화 하도록 만듭니다.
 
 
-set LC_ALL='ko_KR.UTF-8'
+git bash 한글문제
+git config --global core.precomposeunicode true
+git config --global core.quotepath false
+
 -----------------------------------------------------------------------------------
 객체 변경을 통해 데이터 수정하기
 var player = {score: 1, name: 'Jeff'};
