@@ -7,6 +7,12 @@ git bash 한글문제
 git config --global core.precomposeunicode true
 git config --global core.quotepath false
 
+
+---------------
+esling 저장시 자동적용
+설정 > 검색 (format javascript) javascript > format:Enable 체크 해제
+설정 -> text editor -> formatting -> format on save 체크
+
 -----------------------------------------------------------------------------------
 객체 변경을 통해 데이터 수정하기
 var player = {score: 1, name: 'Jeff'};
