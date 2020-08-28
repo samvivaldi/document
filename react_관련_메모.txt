@@ -9,9 +9,10 @@ git config --global core.quotepath false
 
 
 ---------------
-esling 저장시 자동적용
+eslint 저장시 자동적용
 설정 > 검색 (format javascript) javascript > format:Enable 체크 해제
 설정 -> text editor -> formatting -> format on save 체크
+
 
 -----------------------------------------------------------------------------------
 객체 변경을 통해 데이터 수정하기
@@ -42,6 +43,17 @@ var math = math || {}; // math 네임스페이스
 })();
 
 
+const today = new Date(); // Tue May 21 2019 22:19:42 GMT+0900 (한국 표준시)
+const formattedDate = today.toISOString().substring(0, 10); // "2019-05-21"
+const [year, month, day] = formattedDate.split('-');
+console.log([year, month, day]); // [ '2019', '05', '21' ]
+
+
+react
+ JSX 를 props 로 전달 해 줄 수 있다는 점만 알아두세요! 나중에 언젠가 유용하게 사용하게될겁니다.
+ 리액트 state 에서 배열을 다룰 때는 절대로 push 를 사용하면 안됩니다.
+ 
+
 
 https://polyfill.io/v3/polyfill.min.js?features=default%2Cconsole
 
@@ -50,3 +62,19 @@ https://cdn.rawgit.com/inexorabletash/polyfill/v0.1.41/polyfill.min.js?features=
 https://polyfill.io/v3/polyfill.min.js?features=default%2CSet%2CJSON%2CPromise%2Cconsole
 
 http://localhost:8080/v3/polyfill.min.js?features=default%2CSet%2CJSON%2CPromise%2Cconsole
+
+----------------------------------------------
+
+AWS 교육대상자분들은 본교육전에 아래의 온라인 교육을 꼭 수강해 주시기 바랍니다.
+
+AWS Cloud Practitioner Essentials
+https://www.aws.training/Details/Curriculum?id=36668
+클라우드 개념, AWS 서비스, 보안/아키텍쳐, 요금 및 지원방법
+
+AWS Security Fundamentals
+https://www.aws.training/Details/Curriculum?id=11048
+클라우드 컴퓨팅 및 AWS 보안에 대한 소개, 액세스 제어 및 관리, 로깅/암호화 및 네트웍 보안, 거버넌스/위험관리 및 규정준수
+
+
+
+http://aws.training
