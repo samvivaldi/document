@@ -1,0 +1,102 @@
+aws 강의 정리
+
+
+arn : amazon resource name
+
+AWS 서비스 접근제어방식
+- 사용자 중심 접근 제어 : IAM
+- 리소스 중심 접근 제어 : s3, Glacier, ...
+
+
+
+리전
+-리전 선택시 해당 지역의 법적인 문제등 고려
+-비용은 리전별로 다릅니다.
+-리전 선택시 지연시간도 고려
+
+
+az
+- 가용영역
+
+
+
+엣지로케이션 : CDN을 제공하기 위해 만든서비스, 대표적으로 cloud front 서비스
+
+
+
+
+S3
+- 리젼 scope의 서비스
+- simple stroage service
+- 객체(파일?) 수준 스토리지
+- bucket을 만들었다(s3 생성했다), bucket name 전 세계적으로 uniq 해야함	 
+- 웹기반으로 uri 르 통해서 파일 접근이 가능함.
+- 이벤트 트리거제공 (lamda application 가 실행되도록 할 수 있음)
+- https://[bucket name].s3.amazonaws.com/[file name]
+- 기본값 : 비공개
+- 버젼관리 제공함. (디폴트는 사용암함)
+- 모범 사용사례 : 한번쓰고 여러번 읽어야하는 경우
+- 이상적인 사용사례가 아닌경우 : 자주 바뀌는 데이타, 장기 아카이브 스토리(<-- s3 glacier를 사용하는게 적당)
+- 비용 : 스토리지용량, 다른 리전 또는 인터넷으로 전송, put,copy,post,list 및 get 요청
+       Amazon S3로 수신하는경우는 무료, 동일한 리전내 amazon ec2로 전송하는경우 무료
+       s3 glacier 에서 데이타를 검색하는 경우
+- s3 Standard -> s3 standard IA -> s3 Glacier  (접속빈도수에 따라)       
+- Amazon S3 인텔리전트 티어링 : 스토리지의 두 액세스 티어 사이에서 자동으로 객체 이동
+
+
+
+EC2 (Elastic Computing Cloud)
+- 웹호스팅, 데이타베이스, 인증, 서버가 처리할수 있는 모든것
+- AMI (Amazon Machine Image) : 루트 볼률용 템플릿 (OS + 템플릿)
+- m5.large (m:패밀리 이름, 5:세대번호, large:인스턴스 크기)
+- t시리즈는 놀고 있는 cpu에 대해서 save한후 사용할수 있다.
+- 요금
+  온디맨드 인스턴스 : 사용한 만큼 지불
+  예약(RI) 인스턴스 : 용량에 대한 비용을 미리 지불 (비용절감)
+  savings plans : ri 구매를 조정할 필요가 없음.
+  스팟 인스턴스 : 미사용 ec2 용량 구매
+- 전용 인스턴스 : 다른 고객이랑 하드웨어를 나눠 쓰지 않는다.
+- 전용 호스트 : 
+- aws리소스에 메타데이타 태그를 할당(리소스 구분에 도움이 됨, 태그는 너무 적게 사용하는것보다 너무 많이 사용하는것이 낫습니다.)
+
+
+
+EBS (Elastic Block Store)
+- AZ scope
+- 하나의 EC2에 연결되어서 사용되어짐. (동시에 ec2에 연결안됨)
+- 인스턴스 스토리지는 휘발성입니다. (데이타 볼륨을 백업할 수 있어야 합니다.)
+- 종료시까지 지속되는 데이타가 필요합니다.
+- ec2와 인스턴스는 같은 하드웨어 장비에 존재한다.
+- ssd 기반 (범용 ssd, 프로비저닝된 ssd)
+- 하드디스크기반
+
+
+EFS(리눅스 기반) / FSX(윈도우 기반)
+- 공유 파일 시스템
+- ec2 여러게 연결 가능
+
+
+database
+- 관계형 sql : 수직적 확장
+- nosql : 수평적 확장
+- 관리형서비스 , 비관리형서비스(ec2에 db 설치하여 사용)
+
+
+iam
+- global scope
+
+
+VPC (Amazon Virtual Private Cloud)
+
+
+
+ELB (Elastic Load Balancing)
+
+
+
+
+참고
+- iops 아이옵스(Input/Output Operations Per Second, IOPS)는 HDD, SSD, SAN 같은 컴퓨터 저장 장치를 벤치마크하는 데 사용되는 성능 측정 단위
+- 프로비저닝 (provisioning)은 사용자의 요구에 맞게 시스템 자원을 할당, 배치, 배포해 두었다가 필요 시 시스템을 즉시 사용할 수 있는 상태로 미리 준비해 두는 것을 말한다
+
+
