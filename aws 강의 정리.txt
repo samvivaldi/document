@@ -84,14 +84,137 @@ database
 
 iam
 - global scope
+- 관리자라고 해도 root 계정보다는 해당 자격의 사용자를 이용
 
 
 VPC (Amazon Virtual Private Cloud)
+- vpc 리전 내 모든 가용 영역의 리소스를 호스팅 할 수 있다.
+- 서비스 제한 : 계정당 리전당 VPC 5개 (soft limit기 떄문에 신청해서 변경할 수 있음.)
+- 서브넷을 사용하여 vpc 분리
+- 각 서브넷에 5개의 IP주소가 예약되어잇음(brodcast, gateway, name server ...)
+- 작은크기 2보다는 큰 크기(최소 24는 해야될듯)의 서브넷을 고려해야함(CIDR 표기  10.0.1.0 /24 )
+  (뒤에 크기는 변경 못하는듯)
+- 상태 저장 규칙을 따름 (인바운드가 허용되어 있으면 연결후 ob도 가능)
+- vpc 연결 (vpc 피어링)
+  전이적 피어링은 제공하지 핞음(3개의 vpc가 있을때 거쳐서 연결될수는 없음, 각자 허용해야함) 
+  CIDR 주소가 중복되면 안됨. (vpc 주소가 중복되지 않게 설정하는게 좋겠다. 10.1.0.0 /16,  10.2.0.0 / 16)
+  
 
+SG (security group)
+- 기본적으로 ob에 대해서는 모두 허용 , ib 대해서는 거절되어있음.
 
 
 ELB (Elastic Load Balancing)
+- application load balancer :http 및 https (요청수준(7 layer))
+  경로기반 라우팅(/orders, /images ...)
+- Network Load Balancer : TCP 및 UDP (요청수준(4 layer))
+- 고가용성, 상태확인, 보안기능
+- Connection Drainging(등록취소지연) : 인스턴스를 제어해야 하지만 사용자에게 영향을 미치지 않을려는 경우
 
+<Auto Scaling Policy>
+-수동으로 조정 : 원하는 개수 조정
+-자동 조정
+  a. 초기값유지 : 2/2/2
+  b. 단순조정정책
+  c. 단계조정정책
+  d. 대상추적조정정책
+  예약
+  예측
+  
+
+
+
+
+네트워크 ACL(NACL) 액세스 제어 목록)
+- 서브넷 경계의 방화벽
+- 상태 비정장이므로 인바운드 및 아웃바운드 트래픽 모드에 대한 명시적인 규칙이 필요함
+
+
+route 53
+- DNS 서비스 제공
+- 멀티플 라우팅 옵션 제공
+
+
+
+Iac의 이점(코드형 인프라)
+- script를 CloudFormation 을 통해 생성
+- CloudFormation에 조건문을 사용해서 다른 타입으로 생성도 가능
+- 스택 업데이트
+- 계층화된 아키텍처를 권장
+  프런트앤드
+  백엔드
+  공유
+  기본네트워크
+  자격증명  에 대해서 하나씩 스크립트 생성
+AWS Quick Start 를 통한 표준화된 템플릿을 제공
+
+AWS OpsWorks를 사용하여 애플리케이션 계층을 배포
+
+AWS Elastic Beanstalk - 환경ㅉ
+- application 환경 구축
+
+
+AWS CloudFront
+- 엣지로케이션에 캐쉬 서비스
+
+AWS WAF
+-방화벽 서비스(ddos공격등 방어)
+
+세션관리
+-세션쿠키 
+-Load Balancing으로 세션이 분리되는거 방지하는 방법이 있다는데.
+-특정서버로 접속하게 (고정세션기능)
+-dynamoDB를 사용해서 관리 (session server기능)
+
+
+Amazon SQS
+
+
+Amazon SNS (Simple Notification Service)
+-이메일,http/https, sms, amazon sqs 대기열, aws Lambda함수
+-주문 및 전달을 보장할 수 없음.
+
+
+ECS(Amazon Elastic Container)
+-인프라 구축의 복잡성을 제거함. docker 기분인가봄
+
+
+ECR(Elastic Container Registory)
+
+
+AWS fargate
+-완전 관리형 컨테이너 서비스
+-클러스터 프로비저닝 및 관리
+-실행시간 환경관리
+
+
+Lambda service(서버리스 컴퓨팅)
+- 완전 관리형 컴퓨팅 서비스
+- 상태 비저장 코드 실행
+- node.js, java, python, c#, go 등 지원
+- 일정 또는 이벤트에 대한 응답으로 코드를 실행(예:s3, DynamoDB 테이블의 데이터 변경)
+- 엣지에서 실행가능
+- 개발자 입장에서는 매우 좋음.
+- 서버리스 컴퓨팅
+  구성이 아니라 애플리케이션에 집중함
+  요청 시에만 컴퓨팅 리소스 사용
+  마이크로서비스 아키텍처 구축
+  
+
+Api Gateway 서비스
+- ec2 서비스 호출
+- aws lambda 호출
+- 사용자 자격 증명
+
+
+AWS Step Function
+
+
+aws 장애서 어떻게 대처할지에 대해서도 고민이 필요하다.
+
+
+
+chaos monkey  <-- netflex 가 aws를 이렇게 테스트 한다고하는데.
 
 
 
