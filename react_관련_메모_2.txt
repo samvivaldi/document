@@ -1,0 +1,54 @@
+참고
+기본 npm 명령어
+npm install -g(g는 글로벌, --save-dev 또는 -D 개발dependence, --save 또는 -S 디폴트) 모듈명  <-- 설치
+npm update [패키지명]
+npm search [검색어]
+npm info [패키지명]
+$ npm uninstall <package-name>   로컬/개발 패키지 제거
+$ npm uninstall -g <package-name>  전역 패키지 제거
+
+---------------------------------------------------
+
+관련 프로그램 및 모듈 정보
+1.visual studio code
+  - 확장프로그램 : code Runner, ESLINT , Live Server, (Simple React Snippets, Reactjs code snippets)
+  
+2.nodeJS 설치
+- react 설치
+  npm install -g create-react-app  
+  프로젝트 생성 : create-react-app sam_endorse
+  
+  npm install react-router-dom
+  
+  npm install semantic-ui-react semantic-ui-css
+  
+  npm i axios 
+
+	npm install react-app-polyfill
+
+- serve 설치
+  npm install -g serve 
+
+- json-server 
+  별도 디렉토리에 설치.
+  npm init -y
+  
+  C:\jsonServer\package.json
+  "scripts": {
+    "start": "json-server --watch endorse.json --port 15000"
+  },
+  
+  npm install -g json-server
+
+
+
+3. chrome 브라우져 확장프로그램 
+
+- React Developer Tools
+- Redux DevTools
+- JSON 관련 (JSON Formatter, JSON LINT 등)
+
+- util 관련 (필요 없어도 됨)
+  Postman
+  
+
