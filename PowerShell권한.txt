@@ -1,0 +1,4 @@
+1. windows PowerShell 프로그램을 관리자 권한으로 실행합니다.
+2. Get-ExecutionPolicy 명령어를 작성하면 본인의 권한? 상태가 보여집니다.
+3. 권한이 RemoteSigned 가 아니라면 Set-ExecutionPolicy RemoteSigned 를 입력
+4. Get-ExecutionPolicy 명령어로 다시 한번 확인 하면 RemoteSigned로 변경 확인.
