@@ -1,0 +1,27 @@
+플러그인 :
+IdeaVim
+Key Promoter X
+Rainbox Brackets
+One Dark theme
+
+
+
+<ALT + Insert> : Code Generate
+<CTRL + SHIFT + I> : 코드 구현부 즉시 보기
+<ctrl + alt + v> : 변수 자동 완성 <--- good
+<ctrl + alt + p> : 파라메터 자동 완성
+<ctrl + alt + L> : 소스 정렬
+<ctrl + shift + alt + L> : 소스 정렬
+<ctrl + shift> : 다음줄 추가
+<ctrl + alt + o> : 필요없는 import 지우기
+<alt + enter> : local 변수 선언
+
+
+<ctrl + f9> : 전체 컴파일
+<ctrl + shift + f9> : 부분 컴파일
+
+<alt + shift + f10> : 실행
+<ctrl + n> : 검색
+<ctrl + shift + n> : 파일검색
+<ctrl + shift + alt + n> : 메소드 검색
+<ctrl + shift + f> : 파일 내 전체 검색
