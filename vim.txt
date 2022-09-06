@@ -1,0 +1,31 @@
+화면 커서 이동 
+shift + H
+shift + M
+shift + L
+
+d delete
+y yank(copy)
+c change
+
+- dit   (delete + inner tags)    
+- di"
+- dip
+- dat
+- da"
+- dap
+
+ctrl + r 되돌리기
+
+df(   <------ 커서 이후 ( 까지 삭제
+dt(   <------- 커서이후 ( 다음부터 삭제
+d/(
+-----------------------------------------------------
+intellij
+
+- 클립보드 붙혀 넣기 : ctrl + shift + v
+
+
+-------------------------------------------------------
+visualcode
+
+- 클립보드 붙혀 넣기 : settting.json 에  "vim.useSystemClipboard": true   추가해야함.     *p
