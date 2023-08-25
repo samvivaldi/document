@@ -1,2 +1,29 @@
+
+eclipse.ini
 -Djavax.net.ssl.trustStoreType=Windows-ROOT
 -Djavax.net.ssl.trustStore=NUL
+
+
+
+
+build.gradle
+
+
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	//JSP 추가 시작 	
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+	implementation 'jakarta.servlet:jakarta.servlet-api' 
+	implementation 'jakarta.servlet.jsp.jstl:jakarta.servlet.jsp.jstl-api' //스프링부트 3.0 이상
+	implementation 'org.glassfish.web:jakarta.servlet.jsp.jstl' //스프링부트 3.0 이상
+	//JSP 추가 끝	
+	
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	
+ 	providedCompile 'javax.servlet:javax.servlet-api:4.0.1' //eclipse에서 jsp 오류 나는거 땜시 추가.
+	
+}
