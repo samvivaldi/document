@@ -24,6 +24,4 @@ dependencies {
 	providedRuntime 'org.springframework.boot:spring-boot-starter-tomcat'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
- 	providedCompile 'javax.servlet:javax.servlet-api:4.0.1' //eclipse에서 jsp 오류 나는거 땜시 추가.
-	
 }
