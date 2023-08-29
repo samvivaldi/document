@@ -3,13 +3,25 @@ eclipse.ini
 -Djavax.net.ssl.trustStoreType=Windows-ROOT
 -Djavax.net.ssl.trustStore=NUL
 
+----------------------------------------------
+이클립스 템플릿
+window -> Preferences -> java -> Editor -> Templates 에서 new click
+참고 (logger 로 출력하실분은 아래  System.out.println 이거 대신에 logger.debug 로 변경하시면 됩니다.)
 
 
+- 템플릿 1  (클래스명.메소드명출력)
 
+Name : soutm
+Pattern : System.out.println("call ${enclosing_type}.${enclosing_method}()");
+
+
+- 템플릿 2 (변수명, 변수값 출력)
+
+Name : soutv
+Pattern : System.out.println("${var} :" + ${var});
+
+--------------------------------
 build.gradle
-
-
-
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	//JSP 추가 시작 	
@@ -25,3 +37,4 @@ dependencies {
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	
 }
+------------------------------------
