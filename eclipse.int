@@ -38,3 +38,15 @@ dependencies {
 	
 }
 ------------------------------------
+
+org.springframework.util.StreamUtils
+
+ServletInputStream inputStream = request.getInputStream();
+String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
+
+com.fasterxml.jackson.databind.ObjectMapper
+
+HelloData helloData = objectMapper.readValue(messageBody, HelloData.class);
+String result = objectMapper.writeValueAsString(data);
+
+
