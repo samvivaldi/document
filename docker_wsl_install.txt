@@ -1,0 +1,41 @@
+
+
+1. window 기능 켜기 / 끄기 
+   Windows 기능 중 Linux 용 Windows 하위 시스템을 체크 
+
+2. powershell 관리자 모드실행
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+
+
+3. SL 2를 기본 버전으로 설정 하자.
+wsl --set-default-version 2
+
+
+4. Ubuntu 설치
+Microsoft Store 실행 > Ubuntu 검색 > 최신 버전의 Ubuntu 설치
+
+
+5. docker 설치
+https://www.docker.com/get-started/
+
+설치 후 설정화면에서 
+general 에서 Use the WSL2 체크
+resource intergration check
+
+
+참고
+
+(base) PS C:\WINDOWS\system32> wsl -l -v
+  NAME                   STATE           VERSION
+* Ubuntu-20.04           Stopped         2
+  docker-desktop-data    Stopped         2
+  docker-desktop         Stopped         2
+  Ubuntu                 Stopped         2
+
+1. verseion 2로 변경
+wsl --set-version Ubuntu-20.04 2
+
+2. wsl에서 기본이미지를 Ubuntu 로 변경하려면?
+wsl --set-default-version 2
+wsl --set-default Ubuntu-20.04
