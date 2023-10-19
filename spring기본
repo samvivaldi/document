@@ -397,6 +397,16 @@ HandlerExecutionChain 에는 url을 처리할 @Controller 에 대한 Bean, 처�
 3. HandlerAdapter 에서 handle 호출 (하면 해당  controller 메소드 호출)
 
 4. viewResolver에서
-   InternalResourceView   ,   JstlView extends InternalResourceView 
-   ThymeleafView
+   - InternalResourceView   ,   JstlView extends InternalResourceView 
+   - ThymeleafView
+
+5. HandlerMethodArgumentResolver 인데 줄여서 ArgumentResolver 라고 부른다.   
+(스프링은 30개가 넘는 ArgumentResolver 를 기본으로 제공한다)
+
+6. HandlerMethodReturnValueHandler 를 줄여서 ReturnValueHandler 라 부른다.
+(스프링은 10여개가 넘는 ReturnValueHandler 를 지원한다)
+
+7. HttpMessageConverter
+
+기능 확장은 WebMvcConfigurer 를 상속 받아서 스프링 빈으로 등록
 
