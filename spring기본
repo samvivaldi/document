@@ -377,3 +377,26 @@ CGLIB라는 라이브러리로 내 클래스를 상속 받은 가짜 프록시 �
 이 가짜 프록시 객체는 실제 요청이 오면 그때 내부에서 실제 빈을 요청하는 위임 로직이 들어있다.
 가짜 프록시 객체는 실제 request scope와는 관계가 없다. 그냥 가짜이고, 내부에 단순한 위임 로직만
 있고, 싱글톤 처럼 동작한다.
+
+---------------------------------------------------------------------------
+
+org.springframework.web.servlet.DispatcherServlet
+
+1. HandlerExecutionChain mappedHandler = getHandler(processedRequest);
+[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping@48495ba9, org.springframework.boot.autoconfigure.web.servlet.WelcomePageHandlerMapping@6485b253, org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping@30bcb59a, org.springframework.web.servlet.function.support.RouterFunctionMapping@35b5fd97, org.springframework.boot.autoconfigure.web.servlet.WelcomePageNotAcceptableHandlerMapping@37a36c9b, org.springframework.web.servlet.handler.SimpleUrlHandlerMapping@7e7d5716]
+
+uri에 매칭 되는 핸들러 리턴 HandlerExecutionChain
+HandlerExecutionChain 에는 url을 처리할 @Controller 에 대한 Bean, 처리메소드 정보, interceptorList를 가지고 있음.
+
+
+2.  HandlerAdapter ha = getHandlerAdapter(mappedHandler.getHandler());
+[org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter@6ad28e25, org.springframework.web.servlet.function.support.HandlerFunctionAdapter@26b65bb1, org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter@4fd55686, org.springframework.web.servlet.mvc.SimpleControllerHandlerAdapter@3d3a80d8]
+
+처리 Adapter 찾기.
+
+3. HandlerAdapter 에서 handle 호출 (하면 해당  controller 메소드 호출)
+
+4. viewResolver에서
+   InternalResourceView   ,   JstlView extends InternalResourceView 
+   ThymeleafView
+
