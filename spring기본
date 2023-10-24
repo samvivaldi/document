@@ -410,3 +410,15 @@ HandlerExecutionChain 에는 url을 처리할 @Controller 에 대한 Bean, 처�
 
 기능 확장은 WebMvcConfigurer 를 상속 받아서 스프링 빈으로 등록
 
+
+------------------------------------------
+org.springframework.util.StreamUtils
+
+ServletInputStream inputStream = request.getInputStream();
+String messageBody = StreamUtils.copyToString(inputStream, StandardCharsets.UTF_8);
+
+com.fasterxml.jackson.databind.ObjectMapper
+
+HelloData helloData = objectMapper.readValue(messageBody, HelloData.class);
+String result = objectMapper.writeValueAsString(data);
+
