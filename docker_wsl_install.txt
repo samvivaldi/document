@@ -3,10 +3,22 @@
 1. window 기능 켜기 / 끄기 
    Windows 기능 중 Linux 용 Windows 하위 시스템을 체크 
 
+또는
+
 2. powershell 관리자 모드실행
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 
+      (▶ WSL2 사용 요구 사항
+       - WSL2실행을 위해선 다음 조건을 충족 해야 한다. (결국 Windows 업데이트 필요)
+       > Window10 
+      
+      x64 시스템의 경우: 버전 1903 이상, 빌드 18362 이상
+      ARM64 시스템의 경우: 버전 2004 이상, 빌드 19041 이상 
+      
+       > Windows 11
+      출처: https://goddaehee.tistory.com/313 [갓대희의 작은공간:티스토리]
+      )
 
 3. SL 2를 기본 버전으로 설정 하자.
 wsl --set-default-version 2
