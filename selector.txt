@@ -1,4 +1,5 @@
 
+vvv
 
 전체 셀렉터 (Universal Selector)
 * { color: red; } : HTML 문서 내의 모든 요소를 선택한다. html 요소를 포함한 모든 요소가 선택된다. (head 요소도 포함된다)
