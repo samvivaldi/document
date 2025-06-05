@@ -1,0 +1,20 @@
+services:
+  postgres:
+    build: .
+    container_name: my_postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: sam
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: mydb
+      LANG: ko_KR.UTF-8
+      LC_ALL: ko_KR.UTF-8      
+    volumes:
+      - /home/kvivaldi/postgres_data:/var/lib/postgresql/data
+    restart: no
+
+#docker-compose build
+#docker-compose up -d
+
+
