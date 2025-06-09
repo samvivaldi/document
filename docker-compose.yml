@@ -1,6 +1,10 @@
 services:
   postgres:
-    build: .
+    #build: .
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: my_postgres_image
     container_name: my_postgres
     ports:
       - "5432:5432"
