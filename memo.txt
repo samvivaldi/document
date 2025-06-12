@@ -1,10 +1,30 @@
+템플릿 콜백 패턴
 
-create table member (
- member_id varchar(10),
- money integer not null default 0,
- primary key (member_id)
-);
 
-insert into member(member_id, money) values ('hi1',10000);
-insert into member(member_id, money) values ('hi2',20000);
-//test
+@Transactional
+public void methodA() {
+
+	데이타 처리 1
+	데이타 처리 2
+	
+	methodB();
+	
+	데이타 처리 3;
+	데이타 처리 4;
+
+}
+
+
+@Transactional
+public void methodB() {
+
+	데이타 처리 a
+	데티아 처리 b
+
+}
+
+spring에서 위 경우에 데이타 처리 4에서 예외가 발생한다면
+methodB() 에서 처리된 내용은 commit 이 되나요?
+
+
+sam
