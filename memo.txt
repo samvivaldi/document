@@ -27,4 +27,4 @@ spring에서 위 경우에 데이타 처리 4에서 예외가 발생한다면
 methodB() 에서 처리된 내용은 commit 이 되나요?
 
 
-sam
+@Transactional(propagation = Propagation.REQUIRES_NEW)
