@@ -1,0 +1,15 @@
+git hub : https://github.com/sionic-ai/spring-ai-tutorial 
+
+key 발금
+https://platform.openai.com/api-keys
+
+
+
+
+
+수업 자료는 하기 블로그 링크를 참고해주세요.
+
+https://blog.sionic.ai/spring-ai-series-1
+https://blog.sionic.ai/spring-ai-series-2
+
+
