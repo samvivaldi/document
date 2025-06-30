@@ -1,3 +1,14 @@
+git flow 명령어
+# git flow 초기화
+git flow init
+
+# feature 브랜치 시작
+git flow feature start my-feature
+
+# 작업 후 feature 브랜치 종료 및 develop으로 병합
+git flow feature finish my-feature
+
+
 물론입니다!
 이번에는 `git flow`를 쓰지 않고, **일반적인 Git 명령어만으로 Git Flow 전략을 구현하는 방법**을 설명드릴게요.
 
