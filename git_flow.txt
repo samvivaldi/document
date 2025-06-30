@@ -9,9 +9,6 @@ git flow feature start my-feature
 git flow feature finish my-feature
 
 
-
-
-
 물론입니다!
 이번에는 `git flow`를 쓰지 않고, **일반적인 Git 명령어만으로 Git Flow 전략을 구현하는 방법**을 설명드릴게요.
 
@@ -111,14 +108,5 @@ git push origin --delete feature/login-api  # 원격 브랜치 삭제
 * CI/CD 파이프라인 또는 GitHub Actions 등에서 **더 세밀한 컨트롤**이 필요할 수 있음
 * Git 명령어만으로도 **전략을 완전히 수동으로 구현 가능**
 
---------------------------------------------------------
+---
 
-
-
-질문 : bbb라는 로컬 브랜치를 origin이라는 리모트 저장소의 ccc 브랜치로 push하려면 
-git push origin bbb:ccc
-
-"hosts": [
-    "tcp://localhost:2375",
-    "npipe://./pipe/docker_engine"
-  ]
