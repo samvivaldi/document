@@ -4,7 +4,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    image: my_postgres_image
+    image: kwangsam/postgres:latest
+    #image: my_postgres_image
     container_name: my_postgres
     ports:
       - "5432:5432"
@@ -33,5 +34,16 @@ services:
 #docker-compose build
 #docker-compose up -d
 #docker run --name zipkin -d -p 9411:9411 openzipkin/zipkin
+#docker run -it --rm --name n8n -p 5678:5678 -v ~/.n8n:/home/node/.n8n n8nio/n8n
 
+####################  굳이 할 필요는 없을듯.
+#docker login
+##postgres 서비스의 이미지 이름을 본인의 Docker Hub 저장소 주소(kwangsam/postgres:latest)로 변경해야 합니다.
+##pgadmin은 이미 공개된 공식 이미지를 사용하므로 굳이 본인의 저장소에 Push 할 필요는 없지만, docker-compose.yml 하나로 관리하기 위해 
+##postgres 이미지는 이름을 변경해 줍니다.
+#docker-compose build
+#docker-compose push
 
+## 다른컴퓨터에서
+#docker-compose push
+#docker-compose up -d
